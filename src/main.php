@@ -20,7 +20,7 @@ foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($directory
     if ($fileInfo->isFile() && 'count' === $fileInfo->getFilename()) {
         $content = file_get_contents($fileInfo->getPathname());
 
-        $content = $sanitize ? preg_replace('/[^\d\.\-\s]+/', ' ', $content) : $content;
+        $content = $sanitize ? preg_replace('/[^\d.\-\s]+/', ' ', $content) : $content;
 
         foreach (preg_split('/\s+/', trim($content)) as $number) {
             if (is_numeric($number)) {
