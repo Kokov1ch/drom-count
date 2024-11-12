@@ -6,11 +6,15 @@
 Для развёрки локального окружения требуется Docker.
 ### 1. Запустить контейнер 
 ```bash
-make up
+make build
 ```
 ### 2. Запустить скрипт
 ```bash
 make count path=<path/to/directory>
+```
+или
+```bash
+docker compose exec php php src/main.php --directory=<path/to/directory>
 ```
 Для запуска с использованием предварительной очистки от невалидных символов запусать:
 ```bash

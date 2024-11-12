@@ -15,10 +15,10 @@ down:
 	docker compose down
 
 quality:
-	$(dc-exec) php vendor/bin/ecs --fix
+	php vendor/bin/ecs --fix
 
 count:
-	$(dc-exec) php src/main.php $(path)
+	$(dc-exec) php src/main.php --directory=$(path)
 
 count-sanitize:
-	$(dc-exec) php src/main.php $(path) --sanitize
+	$(dc-exec) php src/main.php --directory=$(path) --sanitize

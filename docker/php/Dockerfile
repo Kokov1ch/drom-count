@@ -3,7 +3,7 @@ FROM php:8.3.13-fpm-alpine3.19
 ENV XDEBUG_VERSION=3.3.2
 ENV DOCKER_APP_UID=1000
 
-RUN apk add --no-cache bash shadow git linux-headers
+RUN apk add --no-cache bash shadow make linux-headers
 
 RUN apk add --no-cache --virtual .phpize-deps $PHPIZE_DEPS \
     && apk add --no-cache \
